@@ -1,0 +1,39 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@material-ui/core": "^4.7.1",
+    "@react-google-maps/api": "^2.20.6",
+    "axios": "^0.19.0",
+    "google-map-react": "^1.1.5",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
+    "react-owl-carousel": "^2.3.1",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.2.0"
+  },
+  "scripts": {
+    "start": "set PORT=3001 && set NODE_OPTIONS=--openssl-legacy-provider  && react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "start:legacy": "set NODE_OPTIONS=--openssl-legacy-provider && react-scripts start"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:3000"
+}
