@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './infor_user.css'
+
 class Inforuser extends Component {
+
     constructor(props) {
         super(props);
         this.state={
@@ -67,6 +69,7 @@ class Inforuser extends Component {
             console.log(error);
         });
     }
+    
     ClickEditProfile=async ()=>{
         let {firstname,lastname,username,email,male,female,img_avatar}=this.state;
         await axios.post('/nguoi-dung/chinh-sua-thong-tin-ca-nhan',{
@@ -88,7 +91,7 @@ class Inforuser extends Component {
             });
         })
         .catch( (error) => console.log(error))
-        .finally(()=>{ window.location.reload()});
+        .finally(()=>{ });
          
     }
     render() {

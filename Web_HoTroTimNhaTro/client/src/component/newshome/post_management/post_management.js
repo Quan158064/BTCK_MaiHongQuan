@@ -37,6 +37,22 @@ class Postmanagement extends Component {
 
 
     }
+    ClickShowNews = async (e) => {
+
+        let id = e.target.value;
+        await axios.post('/phong-tro/quan-ly-tin-dang/hien-tin-tuc-phong-tro', {
+            id
+        }, { headers: { 'Accept': 'application/json' } })
+        .then(res => {
+            console.log("Dữ liệu :",res.data.list_PT)
+            this.setState({
+                list_PT: res.data.list_PT
+            });
+        })
+        .catch((error) => console.log(error));
+    
+    }
+    
     render() {
         return (
             <div>
@@ -72,7 +88,15 @@ class Postmanagement extends Component {
                                     <td>{item.infor.datetime_create}</td>
                                     <td>{item.infor.datetime_finish}</td>
                                     <td>{item.infor.state_news === true ? <button  className="bnt-click_hidden_news" value={item._id} onClick={(e)=>this.ClickHiddenNews(e)}>Tin đang hiện</button>
-                                    : <p>Tin đang ẩn</p>}</td>
+                                    :(
+                                        <button
+                                          className="bnt-click_show_news"
+                                          value={item._id}
+                                          onClick={(e) => this.ClickShowNews(e)}
+                                        >
+                                          Tin đang ẩn (Hiện tin)
+                                        </button>
+                                      )}</td>
                                </tr>
                             )
                         }

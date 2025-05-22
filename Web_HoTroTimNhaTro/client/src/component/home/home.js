@@ -27,7 +27,8 @@ class Home extends Component {
             Click_Find_News:false,
             flagFilter:false,
             NameUser:[],
-            NameRole:[]
+            NameRole:[],
+            Index_All_News: 6
 
         }
         this.props.StateFiterTyhomeNewstoApp();
@@ -98,7 +99,11 @@ class Home extends Component {
         
     }  
         
-        
+    handleShowMoreNews=()=>{
+        this.setState({
+            Index_All_News: this.state.Index_All_News+3 
+        })
+    }    
     
     
     formatNumber=(num)=> {
@@ -179,7 +184,7 @@ class Home extends Component {
                     {/* News VIP  (Tin nổi bật)*/}
                     <div className="row">
                         {
-                            this.state.All_News.map((item,index)=>
+                            this.state.All_News.slice(0, this.state.Index_All_News).map((item,index)=>
                                 <div className="col-12 col-sm-6 col-md-4 col-xl-4" key={index} >
                                 <div className="Card wow fadeInUp" data-wow-delay="0.3s" >
                                     <div className="cardhome" >
@@ -204,6 +209,15 @@ class Home extends Component {
                             
                            )
                         }
+                        {
+    this.state.Index_All_News < 12 && (
+      <div className="col-12 text-center mt-3 mb-3 " >
+        <button className="search-title" style={{ border:0 }} onClick={this.handleShowMoreNews}>
+          Xem thêm
+        </button>
+      </div>
+    )
+  }
                     </div>
                     
                 </div>
@@ -254,7 +268,7 @@ class Home extends Component {
                                 </div>
                                 <div className=" box-author-info">
                                         <img src={img_idea} alt="author" className="box-author-info-img"/>
-                                <p className="box-author-info-p">{this.state.NameUser[index]},<span className="box-author-info-span">{this.state.NameRole[index]}</span></p>
+                                <p className="box-author-info-p">{this.state.NameUser[index]}</p>
                                 </div>
                                             
                         </div>

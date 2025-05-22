@@ -241,7 +241,7 @@ class NewsDetail extends Component {
                                                 <tr>
                                                     <td className="News-detail-content-table-item">Diện tích:</td>
                                                     <td>Khoảng {item.infor.acreage} m2</td>
-                                                    <td className="News-detail-content-table-item">Số diện thoại:</td>
+                                                    <td className="News-detail-content-table-item">Số điện thoại:</td>
                                                     <td>{"0"+this.state.user.number_phone}</td>
                                                 </tr>
                                                 <tr>
@@ -253,7 +253,7 @@ class NewsDetail extends Component {
                                                 <tr>
                                                     <td className="News-detail-content-table-item">Số phòng ngủ:</td>
                                                     <td>{item.infor.nb_bedroom} Phòng</td>
-                                                    <td className="News-detail-content-table-item">Số phòng tolet:</td>
+                                                    <td className="News-detail-content-table-item">Số phòng toilet:</td>
                                                     <td>{item.infor.nb_bath_toilet} Phòng</td>
                                                 </tr>
                                         </tbody>

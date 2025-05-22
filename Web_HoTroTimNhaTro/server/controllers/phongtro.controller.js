@@ -12,7 +12,6 @@ var News =require('../models/News/news.model');
 
 
 module.exports.citys= async (req,res)=>{
-    console.log('jnjnjn')
    let citys = await Citys.find();
     res.json({
         citys:citys
@@ -501,6 +500,61 @@ module.exports.PostManagerHiddenNewsNT= async (req,res)=>{
         });
     }
 }
+module.exports.PostManagerShowNewsPT= async (req,res)=>{
+    if (req.isAuthenticated() && 'CHUNHATRO' == req.user.role)
+    { 
+        await News.findByIdAndUpdate({"_id":req.body.id},{"infor.state_news":true},(err,result)=>{
+            if(err) console.log(err);
+            News.find({"infor.iduser":req.user._id,"infor.typehome":1},(err,result)=>{
+                if(err) console.log(err);
+                res.json({
+                    list_PT:result
+                })
+            })
+        })
+    }else {
+        res.json({
+            message:"Bạn không có quyền này",
+            result:false    
+        });
+    }
+}
 
-
-
+module.exports.PostManagerShowNewsCH= async (req,res)=>{
+    if (req.isAuthenticated() && 'CHUNHATRO' == req.user.role)
+    { 
+        await News.findByIdAndUpdate({"_id":req.body.id},{"infor.state_news":true},(err,result)=>{
+            if(err) console.log(err);
+            News.find({"infor.iduser":req.user._id,"infor.typehome":2},(err,result)=>{
+                if(err) console.log(err);
+                res.json({
+                    list_CH:result
+                })
+            })
+        })
+    }else {
+        res.json({
+            message:"Bạn không có quyền này",
+            result:false    
+        });
+    }
+}
+module.exports.PostManagerShowNewsNT= async (req,res)=>{
+    if (req.isAuthenticated() && 'CHUNHATRO' == req.user.role)
+    { 
+        await News.findByIdAndUpdate({"_id":req.body.id},{"infor.state_news":true},(err,result)=>{
+            if(err) console.log(err);
+            News.find({"infor.iduser":req.user._id,"infor.typehome":3},(err,result)=>{
+                if(err) console.log(err);
+                res.json({
+                    list_NT:result
+                })
+            })
+        })
+    }else {
+        res.json({
+            message:"Bạn không có quyền này",
+            result:false    
+        });
+    }
+}

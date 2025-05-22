@@ -6,14 +6,14 @@ import img_slide3 from '../image_header/hero3.jpg'
 class SlideHeader extends Component {
     render() {
         return (
-            <div id="demo" className="carousel slide" data-ride="carousel">
+            <div id="demo" className="carousel slide" data-ride="carousel" style={{ width: '100%' }}>
             {/* Indicators */}
                                 {/* The slideshow */}
-                            <div className="carousel-inner">
+                            <div className="carousel-inner" style={{ width: '100%' }}>
                             <div className="carousel-item active">
                                 <img src={img_slide1} alt="Los Angeles" className="carousel-item_img"/>
                             </div>
-                            <div className="carousel-item">
+                            <div className="carousel-item" style={{ width: '100%' }}>
                                 <img  src={img_slide2} alt="Chicago" className="carousel-item_img"/>
                             </div>
                             <div className="carousel-item">

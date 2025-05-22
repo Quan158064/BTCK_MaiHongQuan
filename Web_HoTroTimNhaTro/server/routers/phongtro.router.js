@@ -44,12 +44,23 @@ router.post(
   controller.PostManagerHiddenNewsPT
 );
 router.post(
+  "/quan-ly-tin-dang/hien-tin-tuc-phong-tro",cors(corsOptions),
+  controller.PostManagerShowNewsPT
+);
+router.post(
   "/quan-ly-tin-dang/an-tin-tuc-nha-tro",
   controller.PostManagerHiddenNewsNT
+);
+router.post(
+  "/quan-ly-tin-dang/hien-tin-tuc-nha-tro",
+  controller.PostManagerShowNewsNT
 );
 router.post(
   "/quan-ly-tin-dang/an-tin-tuc-can-ho",
   controller.PostManagerHiddenNewsCH
 );
-
+router.post(
+  "/quan-ly-tin-dang/hien-tin-tuc-can-ho",
+  controller.PostManagerShowNewsCH
+);
 module.exports = router;

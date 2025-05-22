@@ -5,7 +5,7 @@ var Districts = require('../models/tb_district.phongtro.model');
 
 module.exports.News_All= async (req,res)=>{
     try{
-        await News.find({"infor.state_news":1}).sort({"infor.date_now":-1}).limit(6).exec(
+        await News.find({"infor.state_news":1}).sort({"infor.date_now":-1}).limit(12).exec(
             (err, result)=> {
                 if(err) console.log(err);
                 res.json({

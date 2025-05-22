@@ -45,7 +45,7 @@ class Footer extends Component {
                                     <h6><img src={img_envelope} alt="cty"/><span>quan158064@gmail.edu.vn</span> </h6>
                                 </div>
                                 <div className="col-md-12 col-sm-12 col-xs-12  Footer-infor-hourwork">
-                                    <h6><img src={img_location} alt="cty"/> <span>55 Giải Phóng phường Đồng Tâm tp.Hà Nội.</span></h6>
+                                    <h6><img src={img_location} alt="cty"/> <span>55 Giải Phóng - phường Đồng Tâm - TP.Hà Nội.</span></h6>
                                 </div>
                             
                             </div>
